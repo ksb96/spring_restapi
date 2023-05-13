@@ -1,2 +1,2 @@
 # spring_restapi
-basic rest api using spring boot
+basic rest api services created using spring boot
