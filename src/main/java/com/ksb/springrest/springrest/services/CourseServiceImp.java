@@ -48,13 +48,10 @@ public class CourseServiceImp implements CourseService {
 
 	//DELETE
 	@Override
-	public void deleteCourse(Long parseLong){
-		// list=this.list.stream().filter(e->e.getId()!=parseLong).collect(Collectors.toList());
-		Course entity = courseDao.getOne(parseLong);
-		courseDao.delete(entity);
-		// return ;
+	public void deleteCourse(Long parseLong) {
+		Course entity = courseDao.getReferenceById(parseLong);
+		courseDao.delete(entity);		
 	}
-
 }
 
 
