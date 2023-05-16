@@ -21,7 +21,6 @@ public class Course {
 	//default-constructor
 	public Course() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	//getter-setter
 	public long getId() {
