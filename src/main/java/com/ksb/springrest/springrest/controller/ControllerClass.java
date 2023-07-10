@@ -32,8 +32,14 @@ public class ControllerClass {
 	}
 	
 	@GetMapping("/courses/{courseId}")
-	public Course getCourse(@PathVariable String courseId) {
-		return this.courseService.getCourse(Long.parseLong(courseId));
+	public ResponseEntity<HttpStatus> getCourse(@PathVariable String courseId) {
+		try {
+			this.courseService.getCourse(Long.parseLong(courseId));
+			return new ResponseEntity<>(HttpStatus.OK);
+		}catch(Exception e) {
+			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		
 	}
 	
 	@PostMapping(path = "/courses", consumes = "application/json")

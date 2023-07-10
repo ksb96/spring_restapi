@@ -13,7 +13,7 @@ import com.ksb.springrest.springrest.entities.Course;
 public class CourseServiceImp implements CourseService {
 	
 	@Autowired
-	private CourseDao courseDao;
+	public CourseDao courseDao;
 
 	// constructor
 	public CourseServiceImp() {
@@ -53,34 +53,3 @@ public class CourseServiceImp implements CourseService {
 		courseDao.delete(entity);		
 	}
 }
-
-
-//static code-dump
-/*
- * List<Course> list;
-
- list = new ArrayList<>();
-		list.add(new Course(11, "Core java", "basic java course"));
-		list.add(new Course(22, "Angular", "basic angular course"));
-		list.add(new Course(33, "spring-boot", "creating rest api using springboot course"));
-		
-		GET by ID
-		Course c = null;
-		for (Course course : list) {
-			if (course.getId() == courseId) {
-				c = course;
-				break;
-			}
-		}
-		
-		POST
-		list.add(course);
-		
-		UPDATE
-		list.forEach(e -> {
-			if (e.getId() == course.getId()) {
-				e.setTitle(course.getTitle());
-				e.setDescription(course.getDescription());
-			}
-		});
- */
